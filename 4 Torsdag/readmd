@@ -1,0 +1,54 @@
+Uge 35 review af Henrik Lønquist Thomasen: Jeg nåede til Exercise 3.3 og lavede alt undtaget /api/employee/name/{name}. 
+Jeg støtte på nedstående fejl og kunne ikke løse problemet.
+
+Type Exception Report
+
+Message java.lang.IllegalArgumentException: You have provided an instance of an incorrect PK class for this find operation. Class expected : class java.lang.Integer, Class received : class java.lang.String.
+
+Description The server encountered an unexpected condition that prevented it from fulfilling the request.
+
+Exception
+
+javax.servlet.ServletException: java.lang.IllegalArgumentException: You have provided an instance of an incorrect PK class for this find operation.  Class expected : class java.lang.Integer, Class received : class java.lang.String.
+	org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:410)
+	org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:346)
+	org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:366)
+	org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:319)
+	org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:205)
+	org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+Root Cause
+
+java.lang.IllegalArgumentException: You have provided an instance of an incorrect PK class for this find operation.  Class expected : class java.lang.Integer, Class received : class java.lang.String.
+	org.eclipse.persistence.internal.jpa.EntityManagerImpl.findInternal(EntityManagerImpl.java:795)
+	org.eclipse.persistence.internal.jpa.EntityManagerImpl.find(EntityManagerImpl.java:719)
+	org.eclipse.persistence.internal.jpa.EntityManagerImpl.find(EntityManagerImpl.java:588)
+	facades.EmployeeFacade.findEmployeeName(EmployeeFacade.java:88)
+	rest.EmployeeResource.getName(EmployeeResource.java:60)
+	sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	java.lang.reflect.Method.invoke(Method.java:498)
+	org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory.lambda$static$0(ResourceMethodInvocationHandlerFactory.java:52)
+	org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:124)
+	org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:167)
+	org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:176)
+	org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:79)
+	org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:469)
+	org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:391)
+	org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:80)
+	org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:253)
+	org.glassfish.jersey.internal.Errors$1.call(Errors.java:248)
+	org.glassfish.jersey.internal.Errors$1.call(Errors.java:244)
+	org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+	org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+	org.glassfish.jersey.internal.Errors.process(Errors.java:244)
+	org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:265)
+	org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:232)
+	org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:680)
+	org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:394)
+	org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:346)
+	org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:366)
+	org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:319)
+	org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:205)
+	org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+Note The full stack trace of the root cause is available in the server logs.
